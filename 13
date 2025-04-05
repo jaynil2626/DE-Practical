@@ -1,0 +1,9 @@
+q1=df.Fare.quantile(0.25)
+q3=df.Fare.quantile(0.75)
+IQR=q3-q1
+UL=q3+1.5*IQR
+LL=q1-1.5*IQR
+df=df[(df.Fare>=LL)&(df.Fare<=UL)]
+# print(df[df.Pclass==1]['Fare'].sum())
+print(df[df.Pclass==2]['Fare'].sum())
+# print(df[df.Pclass==3]['Fare'].sum())
